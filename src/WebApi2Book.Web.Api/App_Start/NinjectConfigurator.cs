@@ -3,7 +3,7 @@ using Ninject;
 using WebApi2Book.Common;
 using WebApi2Book.Common.Logging;
 
-namespace WebApi2Book.Web.Api.App_Start
+namespace WebApi2Book.Web.Api
 {
     public class NinjectConfigurator
     {
