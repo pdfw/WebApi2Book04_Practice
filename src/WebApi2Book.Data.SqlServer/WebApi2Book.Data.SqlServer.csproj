@@ -52,6 +52,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Mapping\StatusMap.cs" />
+    <Compile Include="Mapping\TaskMap.cs" />
+    <Compile Include="Mapping\UserMap.cs" />
     <Compile Include="Mapping\VersionedClassMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
