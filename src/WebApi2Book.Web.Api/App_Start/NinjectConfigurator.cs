@@ -22,6 +22,7 @@ namespace WebApi2Book.Web.Api
         private void AddBindings(IKernel container)
         {
             ConfigureLog4net(container);
+            ConfigureNHibernate(container);
             container.Bind<IDateTime>().To<DateTimeAdapter>().InSingletonScope();
         }
 
