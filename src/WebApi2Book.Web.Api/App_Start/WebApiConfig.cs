@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web.Http;
 using System.Web.Http.Dispatcher;
 using System.Web.Http.Routing;
+using System.Web.Http.Tracing;
+using WebApi2Book.Common.Logging;
 using WebApi2Book.Web.Common;
 using WebApi2Book.Web.Common.Routing;
 
@@ -29,7 +31,10 @@ namespace WebApi2Book.Web.Api
             (ApiVersionConstraint));
             config.MapHttpAttributeRoutes(constraintsResolver);
             config.Services.Replace(typeof(IHttpControllerSelector),
-            new NamespaceHttpControllerSelector(config));
+                new NamespaceHttpControllerSelector(config));
+            //config.EnableSystemDiagnosticsTracing(); // replaced by custom writer
+            config.Services.Replace(typeof(ITraceWriter),
+                new SimpleTraceWriter(WebContainerManager.Get<ILogManager>()));
         }
     }
 }
