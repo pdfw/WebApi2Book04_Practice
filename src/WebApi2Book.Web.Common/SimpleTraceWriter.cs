@@ -49,19 +49,24 @@ namespace WebApi2Book.Web.Common
             {
                 case TraceLevel.Debug:
                     _log.DebugFormat(traceFormat, args);
+                    _log.DebugFormat(Environment.NewLine);
                     break;
                 case TraceLevel.Info:
                     _log.InfoFormat(traceFormat, args);
+                    _log.InfoFormat(Environment.NewLine);
                     break;
                 case TraceLevel.Warn:
                     _log.WarnFormat(traceFormat, args);
+                    _log.WarnFormat(Environment.NewLine);
                     break;
 
                 case TraceLevel.Error:
                     _log.ErrorFormat(traceFormat, args);
+                    _log.ErrorFormat(Environment.NewLine);
                     break;
                 case TraceLevel.Fatal:
                     _log.FatalFormat(traceFormat, args);
+                    _log.FatalFormat(Environment.NewLine);
                     break;
             }
         }
