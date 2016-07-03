@@ -1,9 +1,10 @@
-﻿using AutoMapper;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Linq;
+using AutoMapper;
 using WebApi2Book.Common.TypeMapping;
 using WebApi2Book.Data.Entities;
 using WebApi2Book.Web.Common;
-using System.Linq;
+using User = WebApi2Book.Web.Api.Models.User;
 
 namespace WebApi2Book.Web.Api.AutoMappingConfiguration
 {
