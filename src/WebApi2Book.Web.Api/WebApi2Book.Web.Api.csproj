@@ -120,6 +120,9 @@
     <Compile Include="App_Start\NinjectConfigurator.cs" />
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="AutoMappingConfiguration\NewTaskToTaskEntityAutoMapperTypeConfigurator.cs" />
+    <Compile Include="AutoMappingConfiguration\TaskAssigneesResolver.cs" />
+    <Compile Include="AutoMappingConfiguration\TaskEntityToTaskAutoMapperTypeConfigurator.cs" />
     <Compile Include="Controllers\V1\TasksController.cs" />
     <Compile Include="Controllers\V2\TasksController.cs" />
     <Compile Include="Global.asax.cs">
