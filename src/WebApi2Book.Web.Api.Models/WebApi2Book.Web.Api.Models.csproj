@@ -39,6 +39,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Constants.cs" />
+    <Compile Include="ILinkContaining.cs" />
     <Compile Include="Link.cs" />
     <Compile Include="NewTask.cs" />
     <Compile Include="NewTaskV2.cs" />
