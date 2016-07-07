@@ -1,4 +1,4 @@
-﻿namespace WebApi2Book.Web.Api.Models
+﻿namespace WebApi2Book.Common
 {
     public static class Constants
     {
