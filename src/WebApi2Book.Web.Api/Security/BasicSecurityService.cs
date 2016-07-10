@@ -67,11 +67,11 @@ namespace WebApi2Book.Web.Api.Security
             }
             return new ClaimsPrincipal(identity);
         }
+
         public virtual WebApi2Book.Data.Entities.User GetUser(string username)
         {
             username = username.ToLowerInvariant();
-            return
-            Session.QueryOver<User>().Where(x => x.Username == username).SingleOrDefault();
+            return Session.QueryOver<User>().Where(x => x.Username == username).SingleOrDefault();
         }
     }
 }
