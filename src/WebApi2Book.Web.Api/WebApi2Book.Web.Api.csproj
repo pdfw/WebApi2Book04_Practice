@@ -129,6 +129,7 @@
     <Compile Include="AutoMappingConfiguration\UserEntityToUserAutoMapperTypeConfigurator.cs" />
     <Compile Include="AutoMappingConfiguration\UserToUserEntityAutoMapperTypeConfigurator.cs" />
     <Compile Include="Controllers\V1\TasksController.cs" />
+    <Compile Include="Controllers\V1\TaskWorkflowController.cs" />
     <Compile Include="Controllers\V2\TasksController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
