@@ -1,5 +1,7 @@
 /lib/*
 /logs/*
+/src/CreateJwt/bin/*
+/src/CreateJwt/obj/*
 /src/WebApi2Book.Common/bin/*
 /src/WebApi2Book.Common/obj/*
 /src/WebApi2Book.Common.Tests/bin/*
