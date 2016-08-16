@@ -34,6 +34,7 @@ namespace WebApi2Book.Web.Api.Controllers.V1
         }
 
         [Route("{id:long}", Name = "GetTaskRoute")]
+        [Authorize(Roles = Constants.RoleNames.Manager)]
         public Task GetTask(long id)
         {
             var task = _taskByIdInquiryProcessor.GetTask(id);

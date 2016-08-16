@@ -22,10 +22,10 @@ namespace CreateJwt
                 Subject = new ClaimsIdentity(new[]
                 {
                     new Claim(ClaimTypes.Name, "bhogg"),
-                    new Claim(ClaimTypes.GivenName, "Boss"),
+                    new Claim(ClaimTypes.GivenName, "张仲炜"),
                     new Claim(ClaimTypes.Surname, "Hogg"),
                     new Claim(ClaimTypes.Role, "Manager"),
-                    new Claim(ClaimTypes.Role, "SeniorWorker"),
+                    //new Claim(ClaimTypes.Role, "SeniorWorker"),
                     new Claim(ClaimTypes.Role, "JuniorWorker")
                 }),
                 TokenIssuerName = "corp",
