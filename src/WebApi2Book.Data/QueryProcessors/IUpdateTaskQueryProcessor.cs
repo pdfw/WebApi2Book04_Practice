@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using WebApi2Book.Data.Entities;
+using PropertyValueMapType = System.Collections.Generic.Dictionary<string, object>;
 
 namespace WebApi2Book.Data.QueryProcessors
 {
@@ -9,5 +10,6 @@ namespace WebApi2Book.Data.QueryProcessors
         Task DeleteTaskUsers(long taskId);
         Task AddTaskUser(long taskId, long userId);
         Task DeleteTaskUser(long taskId, long userId);
+        Task GetUpdatedTask(long taskId, PropertyValueMapType updatedPropertyValueMap);
     }
 }

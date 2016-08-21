@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using WebApi2Book.Data.Entities;
 using WebApi2Book.Data.QueryProcessors;
 using WebApi2Book.Data.Exceptions;
+using PropertyValueMapType = System.Collections.Generic.Dictionary<string, object>;
 
 namespace WebApi2Book.Data.SqlServer.QueryProcessors
 {
@@ -88,6 +89,18 @@ namespace WebApi2Book.Data.SqlServer.QueryProcessors
                     }
                 }
             }
+        }
+
+        public Task GetUpdatedTask(long taskId, PropertyValueMapType updatedPropertyValueMap)
+        {
+            var task = GetValidTask(taskId);
+            var propertyInfos = typeof(Task).GetProperties();
+            foreach (var propertyValuePair in updatedPropertyValueMap)
+            {
+                propertyInfos.Single(x => x.Name == propertyValuePair.Key).SetValue(task, propertyValuePair.Value);
+            }
+            _session.SaveOrUpdate(task);
+            return task;
         }
     }
 }

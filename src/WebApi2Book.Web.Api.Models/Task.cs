@@ -1,18 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace WebApi2Book.Web.Api.Models
 {
     public class Task : ILinkContaining
     {
         private List<Link> _links;
+        [Key]
         public long? TaskId { get; set; }
+        [Editable(true)]
         public string Subject { get; set; }
+        [Editable(true)]
         public DateTime? StartDate { get; set; }
+        [Editable(true)]
         public DateTime? DueDate { get; set; }
+        [Editable(false)]
         public DateTime? CreatedDate { get; set; }
+        [Editable(false)]
         public DateTime? CompletedDate { get; set; }
+        [Editable(false)]
         public Status Status { get; set; }
+        [Editable(false)]
         public List<User> Assignees { get; set; }
         
         public List<Link> Links
