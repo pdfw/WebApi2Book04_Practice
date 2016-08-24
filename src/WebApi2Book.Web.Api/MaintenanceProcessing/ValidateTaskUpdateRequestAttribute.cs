@@ -33,8 +33,7 @@ namespace WebApi2Book.Web.Api.MaintenanceProcessing
         public override void OnActionExecuting(HttpActionContext actionContext)
         {
             var taskId = (long)actionContext.ActionArguments[ActionParameterNames.TaskId];
-            var taskFragment =
-            (JObject)actionContext.ActionArguments[ActionParameterNames.TaskFragment];
+            var taskFragment = (JObject)actionContext.ActionArguments[ActionParameterNames.TaskFragment];
             _log.DebugFormat("{0} = {1}", ActionParameterNames.TaskFragment, taskFragment);
             if (taskFragment == null)
             {
