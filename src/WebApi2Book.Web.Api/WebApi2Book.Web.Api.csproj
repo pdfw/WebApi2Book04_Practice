@@ -144,6 +144,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="InquiryProcessing\AllTasksInquiryProcessor.cs" />
+    <Compile Include="InquiryProcessing\IAllTasksInquiryProcessor.cs" />
     <Compile Include="InquiryProcessing\IPagedDataRequestFactory.cs" />
     <Compile Include="InquiryProcessing\ITaskByIdInquiryProcessor.cs" />
     <Compile Include="InquiryProcessing\PagedDataRequestFactory.cs" />
