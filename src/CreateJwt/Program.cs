@@ -14,9 +14,10 @@ namespace CreateJwt
         {
             var key = Convert.FromBase64String(SymmetricKey);
             var credentials = new SigningCredentials(
-            new InMemorySymmetricSecurityKey(key),
-            "http://www.w3.org/2001/04/xmldsig-more#hmac-sha256",
-            "http://www.w3.org/2001/04/xmlenc#sha256");
+                    new InMemorySymmetricSecurityKey(key),
+                    "http://www.w3.org/2001/04/xmldsig-more#hmac-sha256",
+                    "http://www.w3.org/2001/04/xmlenc#sha256"
+                );
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(new[]

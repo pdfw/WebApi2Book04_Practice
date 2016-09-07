@@ -15,6 +15,7 @@ using WebApi2Book.Data.SqlServer.Mapping;
 using WebApi2Book.Data.SqlServer.QueryProcessors;
 using WebApi2Book.Web.Api.AutoMappingConfiguration;
 using WebApi2Book.Web.Api.InquiryProcessing;
+using WebApi2Book.Web.Api.LinkServices;
 using WebApi2Book.Web.Api.MaintenanceProcessing;
 using WebApi2Book.Web.Api.Security;
 using WebApi2Book.Web.Common;
@@ -53,6 +54,9 @@ namespace WebApi2Book.Web.Api
             container.Bind<IPagedDataRequestFactory>().To<PagedDataRequestFactory>().InSingletonScope();
             container.Bind<IAllTasksQueryProcessor>().To<AllTasksQueryProcessor>().InRequestScope();
             container.Bind<IAllTasksInquiryProcessor>().To<AllTasksInquiryProcessor>().InRequestScope();
+            container.Bind<ICommonLinkService>().To<CommonLinkService>().InRequestScope();
+            container.Bind<IUserLinkService>().To<UserLinkService>().InRequestScope();
+            container.Bind<ITaskLinkService>().To<TaskLinkService>().InRequestScope();
         }
 
         private void ConfigureLog4net(IKernel container)

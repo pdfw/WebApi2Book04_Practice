@@ -46,9 +46,18 @@ namespace WebApi2Book.Web.Api.Controllers.V1
         }
 
         [Route("{id:long}", Name = "GetTaskRoute")]
-        [Authorize(Roles = Constants.RoleNames.Manager)]
+        //[Authorize(Roles = Constants.RoleNames.Manager)]
+        //[Authorize(Roles = Constants.RoleNames.Guest + "," + Constants.RoleNames.SeniorWorker)]
+        //[Authorize(Roles = Constants.RoleNames.Manager + "," + Constants.RoleNames.SeniorWorker)]
+        //[Authorize(Users = "jdoe,jbob")]
+        [Authorize(Users = "bhogg,jbob", Roles = Constants.RoleNames.Manager + "," + Constants.RoleNames.SeniorWorker)]
         public Task GetTask(long id)
         {
+            var s = "";
+            foreach(var c in (this.RequestContext.Principal as System.Security.Claims.ClaimsPrincipal).Claims)
+            {
+                s = c.Value;
+            }
             var task = _taskByIdInquiryProcessor.GetTask(id);
             return task;
         }

@@ -49,6 +49,7 @@
             public const string Manager = "Manager";
             public const string SeniorWorker = "SeniorWorker";
             public const string JuniorWorker = "JuniorWorker";
+            public const string Guest = "Guest";
         }
 
         public const string DefaultLegacyNamespace = "http://tempuri.org/";
