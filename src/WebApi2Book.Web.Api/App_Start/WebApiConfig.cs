@@ -40,6 +40,7 @@ namespace WebApi2Book.Web.Api
             config.Services.Add(typeof(IExceptionLogger), 
                 new SimpleExceptionLogger(WebContainerManager.Get<ILogManager>()));
             config.Services.Replace(typeof(IExceptionHandler), new GlobalExceptionHandler());
+            config.Formatters.XmlFormatter.UseXmlSerializer = true;
         }
     }
 }

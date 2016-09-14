@@ -5,8 +5,7 @@ using WebApi2Book.Data;
 using WebApi2Book.Data.QueryProcessors;
 using WebApi2Book.Web.Api.LinkServices;
 using WebApi2Book.Web.Api.Models;
-using PagedTaskDataInquiryResponse =
-WebApi2Book.Web.Api.Models.PagedDataInquiryResponse<WebApi2Book.Web.Api.Models.Task>;
+using PagedTaskDataInquiryResponse = WebApi2Book.Web.Api.Models.PagedDataInquiryResponse<WebApi2Book.Web.Api.Models.Task>;
 
 namespace WebApi2Book.Web.Api.InquiryProcessing
 {
@@ -46,9 +45,9 @@ namespace WebApi2Book.Web.Api.InquiryProcessing
         {
             inquiryResponse.AddLink(_taskLinkService.GetAllTasksLink());
             _commonLinkService.AddPageLinks(inquiryResponse,
-            GetCurrentPageQueryString(inquiryResponse),
-            GetPreviousPageQueryString(inquiryResponse),
-            GetNextPageQueryString(inquiryResponse));
+                GetCurrentPageQueryString(inquiryResponse),
+                GetPreviousPageQueryString(inquiryResponse),
+                GetNextPageQueryString(inquiryResponse));
         }
         
         public virtual IEnumerable<Task> GetTasks(IEnumerable<Data.Entities.Task> taskEntities)
@@ -64,25 +63,17 @@ namespace WebApi2Book.Web.Api.InquiryProcessing
         
         public virtual string GetCurrentPageQueryString(PagedTaskDataInquiryResponse inquiryResponse)
         {
-            return
-            string.Format(QueryStringFormat,
-            inquiryResponse.PageNumber,
-            inquiryResponse.PageSize);
+            return string.Format(QueryStringFormat, inquiryResponse.PageNumber, inquiryResponse.PageSize);
         }
         
         public virtual string GetPreviousPageQueryString(PagedTaskDataInquiryResponse inquiryResponse)
         {
-            return
-            string.Format(QueryStringFormat,
-            inquiryResponse.PageNumber - 1,
-            inquiryResponse.PageSize);
+            return string.Format(QueryStringFormat, inquiryResponse.PageNumber - 1, inquiryResponse.PageSize);
         }
         
         public virtual string GetNextPageQueryString(PagedTaskDataInquiryResponse inquiryResponse)
         {
-            return string.Format(QueryStringFormat,
-            inquiryResponse.PageNumber + 1,
-            inquiryResponse.PageSize);
+            return string.Format(QueryStringFormat, inquiryResponse.PageNumber + 1, inquiryResponse.PageSize);
         }
     }
 }
